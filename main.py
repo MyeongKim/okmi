@@ -1,6 +1,5 @@
 import os
 import glob
-import pprint
 from collections import defaultdict
 
 from colored import fg, bg, attr
@@ -9,7 +8,7 @@ TEMP_DIR_NAME = 'sample/materialization'
 EXCLUDE_FILE_NAME = 'meta.md'
 
 
-def display_relations():
+def display_relations_tree():
     target_dir = os.path.dirname(os.path.abspath(__file__)) + "/" + TEMP_DIR_NAME
     glob_file_list = glob.glob(target_dir + '/**', recursive=True)
     file_and_dir_list = [i.split(target_dir + "/")[1] for i in glob_file_list
@@ -118,4 +117,4 @@ def add_relations():
 
 
 if __name__ == '__main__':
-    display_relations()
+    display_relations_tree()
